@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Set up directus
-      uses: directus/directus:v8-apache
+      uses: directus/directus:latest
       with:
         HOST_PORT: "8080:80"
         DIRECTUS_APP_ENV: "production"
