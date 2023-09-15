@@ -43,4 +43,4 @@ jobs:
         DIRECTUS_DATABASE_PASSWORD: "directus"
       
         ADMIN_EMAIL: "kkayefekoua93@gmail.com"
-        ADMIN_PASSWORD: "d1r3ctu5" 
+        ADMIN_PASSWORD: "d1r3ctu5"
