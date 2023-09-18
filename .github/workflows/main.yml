@@ -29,10 +29,16 @@ jobs:
   directus:
     runs-on: ubuntu-latest
     steps:
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
     - name: Set up directus
       uses: directus/directus:10.0.0 
       with:
-        HOST_PORT: "8080:80"
+        HOST_PORT: "8080:80" 
         DIRECTUS_APP_ENV: "production"
         DIRECTUS_AUTH_PUBLICKEY: "C69B8E7C437A4E6E16B7A35ACF2C3"
         DIRECTUS_AUTH_SECRETKEY: "8F14A3DB43B93AE97AB3C6151FE76"
