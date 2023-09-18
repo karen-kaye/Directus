@@ -35,18 +35,18 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Set up directus
-      image: directus/directus:10.0.0 
-      with:
-        HOST_PORT: ${{ secrets.HOST_PORT}}
-        DIRECTUS_APP_ENV: "production"
-        DIRECTUS_AUTH_PUBLICKEY: ${{ secrets.PUBLICKEY}}
-        DIRECTUS_AUTH_SECRETKEY: ${{ secrets.SECRETKEY}}
-        DIRECTUS_DATABASE_HOST: "mysql"
-        DIRECTUS_DATABASE_PORT: "3306"
-        DIRECTUS_DATABASE_NAME: "directus"
-        DIRECTUS_DATABASE_USERNAME: "directus"
-        DIRECTUS_DATABASE_PASSWORD: "directus"
+#    - name: Set up directus
+#      uses: directus/directus:10.0.0 
+#      with:
+#        HOST_PORT: ${{ secrets.HOST_PORT}}
+#        DIRECTUS_APP_ENV: "production"
+#        DIRECTUS_AUTH_PUBLICKEY: ${{ secrets.PUBLICKEY}}
+#        DIRECTUS_AUTH_SECRETKEY: ${{ secrets.SECRETKEY}}
+#        DIRECTUS_DATABASE_HOST: "mysql"
+#        DIRECTUS_DATABASE_PORT: "3306"
+#        DIRECTUS_DATABASE_NAME: "directus"
+#        DIRECTUS_DATABASE_USERNAME: "directus"
+#        DIRECTUS_DATABASE_PASSWORD: "directus"
       
-        ADMIN_EMAIL: "kkayefekoua93@gmail.com"
-        ADMIN_PASSWORD: "d1r3ctu5"
+#        ADMIN_EMAIL: "kkayefekoua93@gmail.com"
+#        ADMIN_PASSWORD: "d1r3ctu5"
