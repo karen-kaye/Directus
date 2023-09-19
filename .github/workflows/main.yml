@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: copy-docker-compose
-      copy: /home/karen/Directus/docker-compose.yaml
+      uses: /home/karen/Directus/docker-compose.yaml
       
     - name: build directus
       run: docker compose up
