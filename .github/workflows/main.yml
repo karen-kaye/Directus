@@ -9,45 +9,11 @@ on:
       - main
 
 jobs:
-  mysql:
-    runs-on: ubuntu-latest # is Ubuntu environment
-    steps:
-    - name: Shutdown Ubuntu MySQL (SUDO)
-      run: sudo service mysql stop # Shutdown the Default MySQL, "sudo" is necessary, please not remove it
-
-    - name: Set up MySQL
-      uses: mirromutth/mysql-action@v1.1
-      with:
-        host port: 3800 # Optional, default value is 3306. The port of host
-        container port: 3307 # Optional, default value is 3306. The port of container
-        mysql version: 'latest' # Optional, default value is "latest". The version of the MySQL
-        mysql database: 'some_test' # Optional, default value is "test". The specified database which will be create
-        mysql root password: ${{ secrets.RootPassword }} # Required if "mysql user" is empty, default is empty. The root superuser password
-        mysql user: 'developer' # Required if "mysql root password" is empty, default is empty. The superuser for the specified database. Can use secrets, too
-        mysql password: ${{ secrets.DatabasePassword }}
-        
   directus:
     runs-on: ubuntu-latest
     steps:
-    - name: setup directus
-      run:  docker-compose.yaml
-#      uses: docker/login-action@v2
-#      with:
-#        username: ${{ secrets.DOCKERHUB_USERNAME }}
-#        password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-##    - name: Set up directus
-#      uses: directus/directus:10.0.0 
-#      with:
-#        HOST_PORT: ${{ secrets.HOST_PORT}}
-#        DIRECTUS_APP_ENV: "production"
-#        DIRECTUS_AUTH_PUBLICKEY: ${{ secrets.PUBLICKEY}}
-#        DIRECTUS_AUTH_SECRETKEY: ${{ secrets.SECRETKEY}}
-#        DIRECTUS_DATABASE_HOST: "mysql"
-#        DIRECTUS_DATABASE_PORT: "3306"
-#        DIRECTUS_DATABASE_NAME: "directus"
-#        DIRECTUS_DATABASE_USERNAME: "directus"
-#        DIRECTUS_DATABASE_PASSWORD: "directus"
+    - name: copy-docker-compose
+      copy: /home/karen/Directus/docker-compose.yaml
       
-#        ADMIN_EMAIL: "kkayefekoua93@gmail.com"
-#        ADMIN_PASSWORD: "d1r3ctu5"
+    - name: build directus
+      run: docker compose up
