@@ -7,14 +7,57 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
-  directus:
+  create-remote-folder:
+    name: remote access
     runs-on: ubuntu-latest
     steps:
-    - name: copy-docker-compose
-      uses: 
-        ./docker-compose.yaml
-      
-    - name: build directus
-      run: docker compose up -d
+    - name: create folder on remote vm
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: mkdir -p /opt/applications/directus
+  
+  #copy-configs-on-remote-vm: 
+  #  name: copy configs
+  #  runs-on: ubuntu-latest
+  #  needs: create-remote-folder
+  #  steps:
+  #  - uses: actions/checkout@v3
+  #  - name: copy file via ssh
+  #    uses: appleboy/scp-action@v0.1.4
+  #    with:
+  #      host: ${{ secrets.HOST }}
+  #      username: ${{ secrets.USERNAME }}
+  #      password: ${{ secrets.PASSWORD }}
+  #      port: ${{ secrets.PORT }}
+  #      source: "docker-compose.yaml"
+  #      target: /opt/applications/directus
+
+  #run-directus:
+  #  name: run-directus
+  #  runs-on: ubuntu-latest
+  #  needs: copy-configs-on-remote-vm
+  #  steps:
+  #  - name: run-directus
+  #    uses: appleboy/ssh-action@v1.0.0
+  #    with:
+  #      host: ${{ secrets.HOST }}
+  #      username: ${{ secrets.USERNAME }} 
+  #      password: ${{ secrets.PASSWORD }}
+  #      port: ${{ secrets.PORT }}
+  #      script: sudo docker-compose -f /opt/applications/directus/docker-compose.yaml up -d
+
+
+
+
+
+
+
+
+ 
