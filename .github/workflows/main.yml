@@ -14,7 +14,7 @@ jobs:
     steps:
     - name: copy-docker-compose
       uses: 
-        docker-compose.yaml
+        ./docker-compose.yaml
       
     - name: build directus
       run: docker compose up -d
