@@ -22,7 +22,7 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          sudo mkdir -p /opt/applications/directus
+          mkdir -p /opt/applications/directus
          # sudo chmod ugo+rwx /opt/applications/directus
 
   #copy-configs-on-remote-vm: 
