@@ -37,7 +37,7 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: ${{ secrets.PORT }}
         source: "docker-compose.yaml"
-        target: /opt/applications/directus
+        target: "/opt/applications/directus"
 
   #run-directus:
   #  name: run-directus
