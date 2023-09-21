@@ -24,7 +24,7 @@ jobs:
         script: sudo mkdir -p /opt/applications/directus
   
   copy-configs-on-remote-vm: 
-    name: copy configs
+#    name: copy configs
     runs-on: ubuntu-latest
     needs: create-remote-folder
     steps:
