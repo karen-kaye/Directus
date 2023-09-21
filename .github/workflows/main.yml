@@ -23,7 +23,6 @@ jobs:
         port: ${{ secrets.PORT }}
         script: sudo mkdir -p /opt/applications/directus
   
-        
   copy-configs-on-remote-vm: 
     name: copy configs
     runs-on: ubuntu-latest
