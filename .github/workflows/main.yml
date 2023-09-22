@@ -1,6 +1,5 @@
 name: Directus
 
-
 on:
   push:
     branches:
@@ -24,7 +23,7 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           sudo mkdir -p /opt/applications/directus
-         # sudo chmod ugo+rwx /opt/applications/directus
+          sudo chmod ugo+rwx /opt/applications/directus
 
   #copy-configs-on-remote-vm: 
     #name: copy configs
