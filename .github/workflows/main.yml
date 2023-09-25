@@ -28,7 +28,7 @@ jobs:
   copy-configs-on-remote-vm: 
     name: copy configs
     runs-on: ubuntu-latest
-  #  needs: create-remote-folder
+    needs: create-remote-folder
     steps:
     - uses: actions/checkout@v3
     - name: copy file via ssh
