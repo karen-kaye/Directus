@@ -55,19 +55,19 @@ jobs:
       #  target: "/opt/applications/directus"
 
 
-  #run-directus:
-  #  name: run-directus
-  #  runs-on: ubuntu-latest
+  run-directus:
+    name: run-directus
+    runs-on: ubuntu-latest
   #  needs: copy-configs-on-remote-vm
-  #  steps:
-  #  - name: run-directus
-  #    uses: appleboy/ssh-action@v1.0.0
-  #    with:
-  #      host: ${{ secrets.HOST }}
-  #      username: ${{ secrets.USERNAME }} 
-  #      password: ${{ secrets.PASSWORD }}
-  #      port: ${{ secrets.PORT }}
-  #      script: sudo docker-compose -f /opt/applications/directus/docker-compose.yaml up -d
+    steps:
+    - name: run-directus
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }} 
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: sudo docker-compose -f /opt/applications/directus/docker-compose.yaml up -d
 
 
 
