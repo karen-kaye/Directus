@@ -36,7 +36,7 @@ jobs:
         remote: /opt/applications/directus
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PRIVATE_KEY }}
+        key: ${{ secrets.PRIVATE_KEY }}
         port: ${{ secrets.PORT }}
 
    # name: copy configs
