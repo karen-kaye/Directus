@@ -35,7 +35,7 @@ jobs:
         port: ${{ secrets.PORT }}
         user: ${{ secrets.USERNAME }}
         key: ${{ secrets.PRIVATE_KEY }}
-        source: '/home/karen/Directus/docker-compose.yaml'
+        source: 'docker-compose.yaml'
         destination: '/opt/applications/directus'
           
   #copy-configs-on-remote-vm: 
