@@ -4,7 +4,8 @@
     
 Nous allons déployer directus avec MySQL. Pour cela, nous allons créer deux conteneurs docker ; un pour MySQL server et l’autre avec l’image de Directus. Dans un premier temps, nous utiliserons docker compose pour déployer ces conteneurs en locale et dans un second temps sur un serveur distant.
 Le fichier de configuration docker-compose.yml se présente comme suit :
-``version: "3"
+`
+version: "3"
 
 networks:
   directus:
@@ -43,4 +44,4 @@ services:
       - ./data/uploads:/var/directus/public/uploads    
     networks:
       - directus
- ``
+ `
