@@ -1,7 +1,7 @@
 version: "3"
 
 networks:
-  ${{env.PROJECT_NAME}}:
+  ${{secrets.PROJECT_NAME}}:
  # directus:
 
 services:
@@ -15,12 +15,12 @@ services:
       MYSQL_ROOT_PASSWORD: "directus"
     ports:
       - "3306:3306"
-   # networks:
-     # - ${{env.PROJECT_NAME}}
+    networks:
+      - ${{secrets.PROJECT_NAME}}
       #- directus
 
   CMS:
-    name: lcreate_CMS
+    name: create_CMS
     image: directus/directus:v8-apache
     ports:
       - "8080:80"
@@ -39,6 +39,6 @@ services:
     volumes:
       - ./data/config:/var/directus/config
       - ./data/uploads:/var/directus/public/uploads    
-    #networks:
-     # - ${{env.PROJECT_NAME}}
+    networks:
+      - ${{secrets.PROJECT_NAME}}
       #- directus
