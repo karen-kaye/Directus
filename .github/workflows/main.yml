@@ -38,6 +38,7 @@ jobs:
       #  key: ${{ secrets.PRIVATE_KEY }}
       #  source: 'docker-compose.yaml'
       #  destination: '/opt/applications/directus'
+      
     steps:
     - uses: actions/checkout@v3
     - name: copy file via ssh password
