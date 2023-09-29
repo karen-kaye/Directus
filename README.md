@@ -52,7 +52,8 @@ Une fois directus fonctionnel en local, nous allons maintenant le déployer sur 
 ```
 git remote add origin git@github.com:git_username/nom_repo.git
 git branch -M main
-git push -u origin main```
+git push -u origin main
+```
 Vous allez ensuite faire un `git pull` pour cloner votre repository dans votre dossier local. A la racine de votre dossier créer un fichier .yml où vous allez définir les actions suivantes :
 - Se connecter via ssh sur le serveur distant ;
 - Créer un répertoire sur le serveur distant ;
