@@ -43,4 +43,5 @@ services:
       - directus
  ```
  Ensuite, exécutez la commande suivante à partir de votre racine docker-compose :
- `docker compose up`
+ ``docker compose up``
+ Allez maintenant sur ce lien, http://localhost:8080/ ou http://127.0.0.1:8080/  si le déploiement est réussi, nous pouvons voir la connexion à la page dans l'interface utilisateur Directus comme ci-dessous.
