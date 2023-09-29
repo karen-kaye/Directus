@@ -15,8 +15,8 @@ services:
       MYSQL_ROOT_PASSWORD: "directus"
     ports:
       - "3306:3306"
-    networks:
-      - ${{env.PROJECT_NAME}}
+   # networks:
+     # - ${{env.PROJECT_NAME}}
       #- directus
 
   CMS:
@@ -39,6 +39,6 @@ services:
     volumes:
       - ./data/config:/var/directus/config
       - ./data/uploads:/var/directus/public/uploads    
-    networks:
-      - ${{env.PROJECT_NAME}}
+    #networks:
+     # - ${{env.PROJECT_NAME}}
       #- directus
