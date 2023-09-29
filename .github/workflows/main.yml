@@ -1,4 +1,4 @@
-name: ${{env.PROJECT_NAME}}
+name: DIRECTUS
 
 on:
   push:
