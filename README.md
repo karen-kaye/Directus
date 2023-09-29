@@ -2,7 +2,6 @@
 
 # <p align="center">Automatisation de directus avec guthub action</p>
 
-Nous allons déployer directus avec MySQL.
 Pour cela, nous allons créer deux conteneurs docker ; un pour MySQL server et l’autre avec l’image de Directus.
 Dans un premier temps, nous utiliserons docker compose pour déployer ces conteneurs en locale et dans un second temps sur un serveur distant.
 Ensuite, exécutez la commande suivante à partir de votre racine docker-compose :
