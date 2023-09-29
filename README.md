@@ -42,3 +42,5 @@ services:
     networks:
       - directus
  ```
+ Ensuite, exécutez la commande suivante à partir de votre racine docker-compose :
+ `docker compose up`
