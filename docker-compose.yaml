@@ -1,10 +1,12 @@
 version: "3"
 
 networks:
-  directus:
+  ${{env.PROJECT_NAME}}:
+ # directus:
 
 services:
-  mysql:
+  data_base_server:
+    name: Create data base server
     image: mysql:5.7
     environment:
       MYSQL_DATABASE: "directus"
@@ -14,9 +16,11 @@ services:
     ports:
       - "3306:3306"
     networks:
-      - directus
+      - ${{env.PROJECT_NAME}}
+      #- directus
 
-  directus:
+  CMS:
+    name: lcreate_CMS
     image: directus/directus:v8-apache
     ports:
       - "8080:80"
@@ -28,7 +32,7 @@ services:
       DIRECTUS_DATABASE_PORT: "3306"
       DIRECTUS_DATABASE_NAME: "directus"
       DIRECTUS_DATABASE_USERNAME: "directus"
-      DIRECTUS_DATABASE_PASSWORD: "directus"
+      DIREeCTUS_DATABASE_PASSWORD: "directus"
 
       ADMIN_EMAIL: "kkayefekoua93@gmail.com"
       ADMIN_PASSWORD: "d1r3ctu5"
@@ -36,4 +40,5 @@ services:
       - ./data/config:/var/directus/config
       - ./data/uploads:/var/directus/public/uploads    
     networks:
-      - directus
+      - ${{env.PROJECT_NAME}}
+      #- directus
