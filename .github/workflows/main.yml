@@ -40,7 +40,6 @@ jobs:
         port: ${{ secrets.PORT }}
         source: "docker-compose.yaml"
         target: /opt/applications/${{secrets.PROJECT_NAME}} 
-
   run-CMS:
     name: run-CMS
     runs-on: ubuntu-latest
