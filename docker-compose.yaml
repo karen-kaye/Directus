@@ -5,7 +5,7 @@ networks:
  # directus:
 services:
   data_base_server:
-    name: Create data base server
+    #name: Create data base server
     image: mysql:5.7
     environment:
       MYSQL_DATABASE: "directus"
@@ -19,7 +19,7 @@ services:
       - directus
 
   CMS:
-    name: create_CMS
+    #name: create_CMS
     image: directus/directus:v8-apache
     ports:
       - "8080:80"
