@@ -3,7 +3,6 @@ version: "3"
 networks:
   ${{secrets.PROJECT_NAME}}:
  # directus:
-
 services:
   data_base_server:
     name: Create data base server
