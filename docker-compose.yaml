@@ -13,7 +13,7 @@ services:
       MYSQL_PASSWORD: "directus"
       MYSQL_ROOT_PASSWORD: "directus"
     ports:
-      - "3306:3306"
+      - "3001:3306"
     networks:
       #- ${{secrets.PROJECT_NAME}}
       - directus
