@@ -6,7 +6,7 @@ Dans un premier temps, nous utiliserons docker compose pour déployer ces conten
 
 Ensuite, exécutez la commande suivante à partir de votre racine docker-compose :
  ``docker compose up``  
- Allez maintenant sur ce lien, http://localhost:8080/ ou http://127.0.0.1:8080/  si le déploiement est réussi, nous pouvons voir la connexion à la page dans l'interface utilisateur Directus. 
+ Allez maintenant sur ce lien, http://localhost:numero_de_port/ ou http://127.0.0.1:numero_de_port/  si le déploiement est réussi, nous pouvons voir la connexion à la page dans l'interface utilisateur Directus. 
 
  Une fois directus fonctionnel en local, nous allons maintenant le déployer sur le serveur distant en suivant ces étapes:  
 1. Aller sur github et créez votre repository pour directus par exemple nom_repo
