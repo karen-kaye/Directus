@@ -15,8 +15,8 @@ services:
     ports:
       - "3306:3306"
     networks:
-      #- ${{secrets.PROJECT_NAME}}
-      - directus
+      - ${{secrets.PROJECT_NAME}}
+      #- directus
 
   CMS:
     #name: create_CMS
@@ -39,5 +39,5 @@ services:
       - ./data/config:/var/directus/config
       - ./data/uploads:/var/directus/public/uploads    
     networks:
-      #- ${{secrets.PROJECT_NAME}}
-      - directus
+      - ${{secrets.PROJECT_NAME}}
+      #- directus
