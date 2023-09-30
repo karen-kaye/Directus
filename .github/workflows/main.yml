@@ -26,7 +26,7 @@ jobs:
           sudo chmod ugo+rwx /opt/applications/${{secrets.PROJECT_NAME}}
   
   copy-configs-on-remote-vm:
-    name: copy-configs-on-remote-vm
+    #name: copy-configs-on-remote-vm
     runs-on: ubuntu-latest
     needs: create-remote-folder
     steps:
@@ -41,7 +41,7 @@ jobs:
         source: "docker-compose.yaml"
         target: /opt/applications/${{secrets.PROJECT_NAME}} 
   run-CMS:
-    name: run-CMS
+    #name: run-CMS
     runs-on: ubuntu-latest
     needs: copy-configs-on-remote-vm
     steps:
