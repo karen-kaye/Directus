@@ -15,7 +15,7 @@ services:
     ports:
       - "3306:3306"
     networks:
-      #- ${{secrets.PROJECT_NAME}}
+      - ${{secrets.PROJECT_NAME}}
       - directus
 
   CMS:
