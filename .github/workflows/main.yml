@@ -10,6 +10,18 @@ on:
   workflow_dispatch:  
   
 jobs:
+  json-lint:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: JSON lint
+        uses: dungpham91/lint-json-inside-yaml@v0.0.2
+        with:
+          folder_or_file: ./cms.json
   create-remote-folder:
     name: remote access
     runs-on: ubuntu-latest
