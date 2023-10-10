@@ -22,7 +22,7 @@ services:
     #name: create_CMS
     image: directus/directus:v8-apache
     ports:
-      - "3000:80"
+      - "3300:80"
     environment:
       DIRECTUS_APP_ENV: "production"
       DIRECTUS_AUTH_PUBLICKEY: "C69B8E7C437A4E6E16B7A35ACF2C3"
