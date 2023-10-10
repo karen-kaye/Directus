@@ -13,7 +13,7 @@ services:
       MYSQL_PASSWORD: "directus"
       MYSQL_ROOT_PASSWORD: "directus"
     ports:
-      - "3001:3306"
+      - "3400:3306"
     networks:
       #- ${{fromJson(PROJECT_NAME)}}
       - directus
