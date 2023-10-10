@@ -1,7 +1,7 @@
 version: "3"
 
 networks:
-  #${{secrets.PROJECT_NAME}}:
+  #${{fromJson(PROJECT_NAME)}}:
   directus:
 services:
   data_base_server:
@@ -15,7 +15,7 @@ services:
     ports:
       - "3001:3306"
     networks:
-      #- ${{secrets.PROJECT_NAME}}
+      #- ${{fromJson(PROJECT_NAME)}}
       - directus
 
   CMS:
@@ -39,5 +39,5 @@ services:
       - ./data/config:/var/directus/config
       - ./data/uploads:/var/directus/public/uploads    
     networks:
-      #- ${{secrets.PROJECT_NAME}}
+      #- ${{fromJson(PROJECT_NAME)}}
       - directus

@@ -22,8 +22,8 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          sudo mkdir -p /opt/applications/${{secrets.PROJECT_NAME}}
-          sudo chmod ugo+rwx /opt/applications/${{secrets.PROJECT_NAME}}
+          sudo mkdir -p /opt/applications/${{fromJson(PROJECT_NAME)}}
+          sudo chmod ugo+rwx /opt/applications/${{fromJson(PROJECT_NAME)}}
   
   copy-configs-on-remote-vm:
     name: copy-configs-on-remote-vm
@@ -39,7 +39,7 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: ${{ secrets.PORT }}
         source: "docker-compose.yaml"
-        target: /opt/applications/${{secrets.PROJECT_NAME}} 
+        target: /opt/applications/${{fromJson(PROJECT_NAME)}} 
   run-CMS:
     name: run-CMS
     runs-on: ubuntu-latest
@@ -52,7 +52,7 @@ jobs:
         username: ${{ secrets.USERNAME }} 
         key: ${{ secrets.PRIVATE_KEY }}
         port: ${{ secrets.PORT }}
-        script: sudo docker-compose -f /opt/applications/${{secrets.PROJECT_NAME}}/docker-compose.yaml up -d
+        script: sudo docker-compose -f /opt/applications/${{fromJson(PROJECT_NAME)}}/docker-compose.yaml up -d
 
 
 
